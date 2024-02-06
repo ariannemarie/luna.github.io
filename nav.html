@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation</title>
+    <style>
+        body {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: rgb(251, 62, 138);
+        }
+
+        header {
+            background-color: rgb(9, 9, 9);
+            color:rgb(249, 244, 244);
+            text-align: center;
+            padding: 20px;
+            font-size: larger;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: rgba(180, 9, 140, 0.895);
+            text-align: center;
+        }
+
+        li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        li a {
+            display: block;
+            color: black;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li a:hover {
+            color: rgb(247, 109, 185);
+            background-color: rgb(48, 1, 40);
+        }
+
+        ul.dropdown {
+            position: relative;
+            display: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        ul.dropdown ul {
+            display: none;
+            position: absolute;
+            background-color: black;
+            min-width: 160px;
+            z-index: 1;
+        }
+
+        ul.dropdown li {
+            display: block;
+        }
+
+        ul.dropdown li a {
+            padding: 12px 16px;
+        }
+
+        ul.dropdown li:hover ul {
+            display: block;
+        }
+
+        ul.dropdown li a:hover {
+            background-color: #3f0132;
+            color: white;
+        }
+        img {
+            opacity:100;
+        }
+        img:hover{
+            opacity:100;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Arianne Marie Arcamo</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="home1.html">Home</a></li>
+            <li class="dropdown" onclick="toggleDropdown('aboutdropdown')">
+                <a href="#About">About</a>
+                <ul id="aboutdropdown" class="dropdown">
+                    <li><a href="mission1.html">Mission</a></li>
+                    <li><a href="vision1.html">Vision</a></li>
+                </ul>
+            </li>
+            <li class="dropdown" onclick="toggleDropdown('contactdropdown')">
+                <a href="#Contacts">Contacts</a>
+                <ul id="contactdropdown" class="dropdown">
+                    <li><a href="address1.html">Address</a></li>
+                    <li><a href="Phone1.html">Phone</a></li>
+                </ul>
+            </li>
+            <li class="dropdown" onclick="toggleDropdown('newsdropdown')">
+                <a href="#News">News</a>
+                <ul id="newsdropdown" class="dropdown">
+                    <li><a href="Event1.html">Events</a></li>
+                    <li><a href="Updates1.html">Updates</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <main>
+        <img src="Lunaaaa.jpg">
+    </main>
+
+    <script>
+        function toggleDropdown(dropdownId) {
+            var dropdown = document.getElementById(dropdownId);
+            var isVisible = window.getComputedStyle(dropdown).display === 'block';
+            dropdown.style.display = isVisible ? 'none' : 'block';
+        }
+    </script>
+</body>
+</html>
